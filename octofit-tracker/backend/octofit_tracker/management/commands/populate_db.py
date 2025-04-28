@@ -47,17 +47,16 @@ class Command(BaseCommand):
         team3 = Team.objects.create(name='Team Gamma')
         team3.members.add(user5, user6, user7, user8, user9, user10, user11, user12, user13, user14)
 
-        # Create test activities
-        Activity.objects.create(user=user1, activity_id='activity1', activity_type='Running', duration=timedelta(minutes=30))
-        Activity.objects.create(user=user2, activity_id='activity2', activity_type='Cycling', duration=timedelta(hours=1))
-
-        # Redefine user3 and user4
+        # Define user3 and user4 before their usage
         user3 = User.objects.create(username='alice_smith', email='alice@example.com', password='password123')
         user4 = User.objects.create(username='bob_jones', email='bob@example.com', password='password123')
 
-        # Add more test activities
+        # Update test activities with unique activity_id values
+        Activity.objects.create(user=user1, activity_id='activity1', activity_type='Running', duration=timedelta(minutes=30))
+        Activity.objects.create(user=user2, activity_id='activity2_unique', activity_type='Cycling', duration=timedelta(hours=1))
         Activity.objects.create(user=user3, activity_id='activity3', activity_type='Swimming', duration=timedelta(minutes=45))
         Activity.objects.create(user=user4, activity_id='activity4', activity_type='Hiking', duration=timedelta(hours=2))
+        Activity.objects.create(user=user15, activity_id='activity15', activity_type='Yoga', duration=timedelta(minutes=40))
 
         # Create test leaderboard entries
         Leaderboard.objects.create(user=user1, leaderboard_id='leaderboard1', score=100)
@@ -66,6 +65,7 @@ class Command(BaseCommand):
         # Add more test leaderboard entries
         Leaderboard.objects.create(user=user3, leaderboard_id='leaderboard3', score=200)
         Leaderboard.objects.create(user=user4, leaderboard_id='leaderboard4', score=250)
+        Leaderboard.objects.create(user=user15, leaderboard_id='leaderboard15', score=300)
 
         # Create test workouts
         Workout.objects.create(workout_id='workout1', name='Morning Yoga', description='A relaxing yoga session to start the day.')
@@ -74,5 +74,6 @@ class Command(BaseCommand):
         # Add more test workouts
         Workout.objects.create(workout_id='workout3', name='Evening Stretch', description='A calming stretch routine to end the day.')
         Workout.objects.create(workout_id='workout4', name='Cardio Blast', description='A high-energy cardio workout for all levels.')
+        Workout.objects.create(workout_id='workout5', name='Strength Training', description='A workout focused on building strength.')
 
         self.stdout.write(self.style.SUCCESS('Successfully populated the database with test data.'))
