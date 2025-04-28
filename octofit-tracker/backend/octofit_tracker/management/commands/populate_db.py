@@ -24,7 +24,7 @@ class Command(BaseCommand):
         user1 = User.objects.create(username='john_doe', email='john@example.com', password='password123')
         user2 = User.objects.create(username='jane_doe', email='jane@example.com', password='password123')
 
-        # Add 10 more test users
+        # Redefine user5 through user14
         user5 = User.objects.create(username='charlie_brown', email='charlie@example.com', password='password123')
         user6 = User.objects.create(username='diana_prince', email='diana@example.com', password='password123')
         user7 = User.objects.create(username='edward_snow', email='edward@example.com', password='password123')
@@ -35,6 +35,13 @@ class Command(BaseCommand):
         user12 = User.objects.create(username='julia_roberts', email='julia@example.com', password='password123')
         user13 = User.objects.create(username='kevin_bacon', email='kevin@example.com', password='password123')
         user14 = User.objects.create(username='lisa_kudrow', email='lisa@example.com', password='password123')
+
+        # Add 5 more test users
+        user15 = User.objects.create(username='michael_scott', email='michael@example.com', password='password123')
+        user16 = User.objects.create(username='pam_beesly', email='pam@example.com', password='password123')
+        user17 = User.objects.create(username='jim_halpert', email='jim@example.com', password='password123')
+        user18 = User.objects.create(username='dwight_schrute', email='dwight@example.com', password='password123')
+        user19 = User.objects.create(username='angela_martin', email='angela@example.com', password='password123')
 
         # Add 1 more test team
         team3 = Team.objects.create(name='Team Gamma')
