@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-=!1*^o8(26ewbztb-^!h!9!1!6@3rn^l20u%k_o1sx*b296wa#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'fuzzy-fiesta-4gv6jqqgqp534gj-8000.app.github.dev']
 
 
 # Application definition
