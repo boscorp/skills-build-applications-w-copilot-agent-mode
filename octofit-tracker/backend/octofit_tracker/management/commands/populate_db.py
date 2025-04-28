@@ -24,21 +24,29 @@ class Command(BaseCommand):
         user1 = User.objects.create(username='john_doe', email='john@example.com', password='password123')
         user2 = User.objects.create(username='jane_doe', email='jane@example.com', password='password123')
 
-        # Add more test users
-        user3 = User.objects.create(username='alice_smith', email='alice@example.com', password='password123')
-        user4 = User.objects.create(username='bob_jones', email='bob@example.com', password='password123')
+        # Add 10 more test users
+        user5 = User.objects.create(username='charlie_brown', email='charlie@example.com', password='password123')
+        user6 = User.objects.create(username='diana_prince', email='diana@example.com', password='password123')
+        user7 = User.objects.create(username='edward_snow', email='edward@example.com', password='password123')
+        user8 = User.objects.create(username='fiona_apple', email='fiona@example.com', password='password123')
+        user9 = User.objects.create(username='george_clark', email='george@example.com', password='password123')
+        user10 = User.objects.create(username='hannah_moore', email='hannah@example.com', password='password123')
+        user11 = User.objects.create(username='ian_taylor', email='ian@example.com', password='password123')
+        user12 = User.objects.create(username='julia_roberts', email='julia@example.com', password='password123')
+        user13 = User.objects.create(username='kevin_bacon', email='kevin@example.com', password='password123')
+        user14 = User.objects.create(username='lisa_kudrow', email='lisa@example.com', password='password123')
 
-        # Create test teams
-        team1 = Team.objects.create(name='Team Alpha')
-        team1.members.add(user1, user2)
-
-        # Add more test teams
-        team2 = Team.objects.create(name='Team Beta')
-        team2.members.add(user3, user4)
+        # Add 1 more test team
+        team3 = Team.objects.create(name='Team Gamma')
+        team3.members.add(user5, user6, user7, user8, user9, user10, user11, user12, user13, user14)
 
         # Create test activities
         Activity.objects.create(user=user1, activity_id='activity1', activity_type='Running', duration=timedelta(minutes=30))
         Activity.objects.create(user=user2, activity_id='activity2', activity_type='Cycling', duration=timedelta(hours=1))
+
+        # Redefine user3 and user4
+        user3 = User.objects.create(username='alice_smith', email='alice@example.com', password='password123')
+        user4 = User.objects.create(username='bob_jones', email='bob@example.com', password='password123')
 
         # Add more test activities
         Activity.objects.create(user=user3, activity_id='activity3', activity_type='Swimming', duration=timedelta(minutes=45))
