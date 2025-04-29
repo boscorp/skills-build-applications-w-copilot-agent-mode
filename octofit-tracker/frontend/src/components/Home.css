@@ -1,0 +1,84 @@
+.home-container {
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.home-container .bg-primary {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%) !important;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(10, 88, 202, 0.2);
+}
+
+/* Feature Section */
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(13, 110, 253, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+.features-section .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+.features-section .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Step Numbers */
+.step-number {
+  flex-shrink: 0;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .step-number {
+  transform: scale(1.1);
+}
+
+/* Animation */
+.fade-in {
+  animation: fadeInAnimation 1s ease-out;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .home-buttons {
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  transition: transform 0.3s;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}

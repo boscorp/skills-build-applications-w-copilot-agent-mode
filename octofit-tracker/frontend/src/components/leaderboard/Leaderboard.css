@@ -1,0 +1,202 @@
+/* Leaderboard.css */
+.leaderboard {
+  padding: 15px;
+}
+
+/* Rankings table styling */
+.ranking-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ranking-table th {
+  background-color: #f3f4f6;
+  border: none;
+  padding: 12px 15px;
+  font-weight: 600;
+  color: var(--octofit-dark);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.ranking-table td {
+  padding: 15px;
+  border-top: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.ranking-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.ranking-table tbody tr:hover {
+  background-color: #f9f9ff;
+}
+
+.ranking-table .position {
+  font-weight: 700;
+  font-size: 1.1rem;
+  width: 50px;
+}
+
+.ranking-table .position-1 {
+  color: gold;
+}
+
+.ranking-table .position-2 {
+  color: silver;
+}
+
+.ranking-table .position-3 {
+  color: #cd7f32; /* bronze */
+}
+
+/* User avatar */
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info .name {
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.user-info .grade {
+  font-size: 0.85rem;
+  color: var(--octofit-text-light);
+  margin-bottom: 0;
+}
+
+/* Team logo */
+.team-logo {
+  font-size: 1.8rem;
+  margin-right: 15px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats */
+.stats {
+  font-size: 0.9rem;
+  color: var(--octofit-text);
+}
+
+.points {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--octofit-primary);
+}
+
+/* Tabs styling */
+.nav-tabs {
+  border-bottom: 2px solid #e9ecef;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: var(--octofit-text-light);
+}
+
+.nav-tabs .nav-link.active {
+  border-bottom: 3px solid var(--octofit-primary);
+  color: var(--octofit-primary);
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+  border-color: rgba(48, 102, 190, 0.3);
+  color: var(--octofit-text);
+}
+
+/* Time range selector */
+.time-range-selector {
+  width: 150px;
+}
+
+.time-range-selector .form-select {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.25rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* App Logo in Leaderboard */
+.app-logo {
+  display: flex;
+  align-items: center;
+}
+
+.app-logo img {
+  height: 45px;
+  margin-right: 15px;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+}
+
+.app-logo h1 {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+/* Current user highlight */
+.current-user {
+  background-color: rgba(48, 102, 190, 0.08) !important;
+  border-left: 4px solid var(--octofit-primary);
+}
+
+/* Streak indicator */
+.streak {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #ff6b6b;
+  margin-top: 3px;
+}
+
+.streak i {
+  margin-right: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .ranking-table .position,
+  .ranking-table .streak-col {
+    display: none;
+  }
+  
+  .user-info .grade {
+    display: none;
+  }
+  
+  .avatar, .team-logo {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.4rem;
+  }
+}

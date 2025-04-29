@@ -1,0 +1,98 @@
+/* Dashboard.css */
+.dashboard {
+  padding: 15px;
+}
+
+/* Stats cards */
+.stats-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+  height: 100%;
+  border-top: 4px solid var(--octofit-primary);
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(48, 102, 190, 0.15);
+}
+
+.stats-card .stats-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 1.8rem;
+  color: var(--octofit-primary);
+}
+
+.stats-card h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--octofit-dark);
+}
+
+.stats-card p {
+  color: var(--octofit-text-light);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0;
+}
+
+/* Team Avatar */
+.team-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(48, 102, 190, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Activity Chart */
+canvas {
+  max-width: 100%;
+}
+
+/* App Logo in Dashboard */
+.app-logo {
+  display: flex;
+  align-items: center;
+}
+
+.app-logo img {
+  height: 45px;
+  margin-right: 15px;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+}
+
+.app-logo h1 {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .stats-card {
+    margin-bottom: 15px;
+    padding: 1rem;
+  }
+  
+  .stats-card h3 {
+    font-size: 1.8rem;
+  }
+  
+  .stats-card .stats-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}

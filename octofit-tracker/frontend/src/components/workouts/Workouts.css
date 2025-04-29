@@ -1,0 +1,134 @@
+/* Workouts.css */
+.workouts {
+  padding: 15px;
+}
+
+/* Workout cards styling */
+.workout-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+.workout-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.workout-card .card-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.workout-card .card-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Modal styling */
+.workout-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+}
+
+.workout-modal .modal-content {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1060;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.workout-modal .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.workout-modal .modal-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.workout-modal .modal-body {
+  padding: 1.5rem;
+}
+
+.workout-modal .modal-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.workout-modal .modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+}
+
+.workout-modal .btn-close {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.workout-modal .btn-close:hover {
+  opacity: 1;
+}
+
+/* Add workout form */
+.add-workout-form {
+  background-color: #f9f9ff;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid var(--octofit-primary);
+}
+
+/* App Logo in Workouts */
+.app-logo {
+  display: flex;
+  align-items: center;
+}
+
+.app-logo img {
+  height: 45px;
+  margin-right: 15px;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+}
+
+.app-logo h1 {
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .workout-modal .modal-content {
+    width: 95%;
+  }
+  
+  .workout-modal .modal-body {
+    padding: 1rem;
+  }
+}

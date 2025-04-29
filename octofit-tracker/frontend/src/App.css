@@ -1,0 +1,436 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9ff;
+  color: #333333;
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
+  padding: 20px 0;
+  background-image: linear-gradient(135deg, rgba(230, 240, 255, 0.4) 0%, rgba(240, 255, 245, 0.4) 100%);
+}
+
+/* Custom Colors - OctoFit Theme */
+:root {
+  --octofit-primary: #3066BE;
+  --octofit-primary-dark: #1A4B99;
+  --octofit-secondary: #119DA4;
+  --octofit-accent: #6D4C41;
+  --octofit-success: #2E7D32;
+  --octofit-info: #039BE5;
+  --octofit-warning: #FFA000;
+  --octofit-danger: #D32F2F;
+  --octofit-light: #f8f9fa;
+  --octofit-light-blue: #E3F2FD;
+  --octofit-dark: #2C3E50;
+  --octofit-text: #37474F;
+  --octofit-text-light: #78909C;
+  --octofit-background: #f9f9ff;
+  --octofit-card-bg: #ffffff;
+}
+
+/* Card styling */
+.card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: none;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: var(--octofit-card-bg);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(48, 102, 190, 0.15);
+}
+
+.card-header {
+  font-weight: 600;
+  border-bottom: none;
+  padding: 1.25rem 1.5rem;
+}
+
+.card-header.bg-primary {
+  background: linear-gradient(135deg, var(--octofit-primary) 0%, var(--octofit-primary-dark) 100%) !important;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Table styling */
+.table {
+  margin-bottom: 0;
+  color: var(--octofit-text);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table thead {
+  background: linear-gradient(135deg, var(--octofit-primary) 0%, var(--octofit-primary-dark) 100%);
+  color: white;
+}
+
+.table thead th {
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 1rem;
+}
+
+.table tbody tr:nth-of-type(odd) {
+  background-color: rgba(230, 240, 255, 0.3);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(230, 240, 255, 0.5);
+}
+
+.table td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+  border-top: none;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* Button styling */
+.btn-primary {
+  background: linear-gradient(135deg, var(--octofit-primary) 0%, var(--octofit-primary-dark) 100%);
+  border-color: var(--octofit-primary);
+  font-weight: 500;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus {
+  background: linear-gradient(135deg, var(--octofit-primary-dark) 0%, var(--octofit-primary-dark) 100%);
+  border-color: var(--octofit-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(48, 102, 190, 0.3);
+}
+
+.btn-info {
+  background-color: var(--octofit-info);
+  border-color: var(--octofit-info);
+  color: white;
+}
+
+.btn-success {
+  background-color: var(--octofit-success);
+  border-color: var(--octofit-success);
+}
+
+.btn {
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* Form controls */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #e0e6ed;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.form-control:focus {
+  border-color: var(--octofit-primary);
+  box-shadow: 0 0 0 0.25rem rgba(48, 102, 190, 0.2);
+  background-color: #fff;
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--octofit-text);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--octofit-dark);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h1, .h1 {
+  font-size: 2.25rem;
+  background: linear-gradient(135deg, var(--octofit-primary) 0%, var(--octofit-primary-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+h2, .h2 {
+  font-size: 1.85rem;
+  color: var(--octofit-primary-dark);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h2:after, .h2:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 50px;
+  background: linear-gradient(135deg, var(--octofit-primary) 0%, var(--octofit-info) 100%);
+  border-radius: 3px;
+}
+
+/* Links */
+a {
+  color: var(--octofit-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover, a:focus {
+  color: var(--octofit-primary-dark);
+  text-decoration: none;
+}
+
+.card a:not(.btn) {
+  position: relative;
+  display: inline-block;
+}
+
+.card a:not(.btn)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background-color: var(--octofit-primary);
+  transition: width 0.3s ease;
+}
+
+.card a:not(.btn):hover::after {
+  width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Navigation styling */
+.navbar {
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, var(--octofit-primary) 0%, var(--octofit-primary-dark) 100%) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  height: 35px;
+  margin-right: 10px;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.25rem;
+  color: var(--octofit-primary);
+}
+
+/* Stats cards */
+.stats-card {
+  border-left: 4px solid var(--octofit-primary);
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(48, 102, 190, 0.15);
+}
+
+.stats-card .stats-icon {
+  font-size: 2.5rem;
+  color: var(--octofit-primary);
+  background: linear-gradient(135deg, var(--octofit-primary) 0%, var(--octofit-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.stats-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--octofit-dark);
+}
+
+.stats-card p {
+  color: var(--octofit-text-light);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Logo and App Header */
+.app-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.app-logo img {
+  height: 45px;
+  margin-right: 15px;
+}
+
+.app-logo h1 {
+  margin-bottom: 0;
+  font-size: 1.8rem;
+}
+
+/* Footer styling */
+.footer {
+  background: linear-gradient(135deg, var(--octofit-dark) 0%, #1E272E 100%);
+  color: white;
+  padding: 3rem 0 2rem;
+}
+
+.footer h5 {
+  color: white;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.footer h5:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 3px;
+  width: 40px;
+  background: linear-gradient(135deg, var(--octofit-primary) 0%, var(--octofit-info) 100%);
+  border-radius: 3px;
+}
+
+.footer a.text-white-50:hover {
+  color: white !important;
+}
+
+/* Badge Styles */
+.badge {
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.badge-primary {
+  background-color: var(--octofit-primary);
+  color: white;
+}
+
+.badge-info {
+  background-color: var(--octofit-info);
+  color: white;
+}
+
+.badge-success {
+  background-color: var(--octofit-success);
+  color: white;
+}
+
+/* Custom App Background */
+body {
+  background-color: var(--octofit-background);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 15px;
+  }
+  
+  .table-responsive {
+    font-size: 0.85rem;
+  }
+  
+  h1, .h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2, .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .navbar-brand img {
+    height: 30px;
+  }
+  
+  .stats-card {
+    padding: 1rem;
+  }
+  
+  .stats-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .app-logo img {
+    height: 35px;
+  }
+}
+  .card {
+    margin-bottom: 15px;
+  }
+  
+  .table-responsive {
+    font-size: 0.85rem;
+  }
